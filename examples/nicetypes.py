@@ -21,7 +21,18 @@ external_data = {
 user = User(**external_data)
 
 print(user)
+
 print(user.__fields__)
+"""
+{
+    'id': ModelField(name='id', type=int, required=True), 
+    'signup_ts': ModelField(name='signup_ts', type=Optional[datetime], required=False, default=None), 
+    'friends': ModelField(name='friends', type=List[int], required=False, default=[]), 
+    'name': ModelField(name='name', type=str, required=False, default='John Doe')
+}
+"""
+print(*User.__fields__)  # id signup_ts friends name
+
 print(user.__config__)
 print(user.__config__.expire)
 
